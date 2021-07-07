@@ -18,7 +18,11 @@ func main() {
 	counts := make(map[string]int)
 	input := bufio.NewScanner(os.Stdin)
 	for input.Scan() {
-		counts[input.Text()]++
+		text := input.Text()
+		if text  == ""{
+			break
+		}
+		counts[text]++
 	}
 	// NOTE: ignoring potential errors from input.Err()
 	for line, n := range counts {

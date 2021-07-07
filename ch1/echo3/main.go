@@ -11,7 +11,7 @@ import (
 	"os"
 	"strings"
 )
-
+//book task 1.2
 //!+
 func main() {
 	fmt.Println(EchoEx1(os.Args))

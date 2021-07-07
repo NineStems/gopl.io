@@ -13,9 +13,10 @@ import (
 	"fmt"
 	"os"
 )
-
+//book task 1.3
 func main() {
 	counts := make(map[string]int)
+	filesDup := make(map[string]struct{})
 	files := os.Args[1:]
 	if len(files) == 0 {
 		countLines(os.Stdin, counts)
@@ -28,13 +29,23 @@ func main() {
 			}
 			countLines(f, counts)
 			f.Close()
+			if checkDup(counts){
+				filesDup[arg]= struct{}{}
+			}
 		}
 	}
-	for line, n := range counts {
+	for line := range filesDup {
+			fmt.Printf("%s\n", line)
+	}
+}
+
+func checkDup(counts map[string]int) bool {
+	for _, n := range counts {
 		if n > 1 {
-			fmt.Printf("%d\t%s\n", n, line)
+			return true
 		}
 	}
+	return false
 }
 
 func countLines(f *os.File, counts map[string]int) {
