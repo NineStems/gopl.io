@@ -19,3 +19,6 @@ book; you can safely ignore them.  In a few cases, programs
 have been reformatted in an unnatural way so that they can be presented
 in stages in the book.
 
+- [x] ch1 ex 1-3
+- [x] ch1 ex 4
+- [ ] ch1 ex 5-6
