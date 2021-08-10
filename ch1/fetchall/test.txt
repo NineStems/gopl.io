@@ -1,0 +1,6 @@
+0.37s     9951  https://golang.org
+0.48s    68154  https://medium.com/
+0.64s      175  http://somesite.com
+1.43s     4154  http://gopl.io
+2.30s  1270930  http://alexa.com
+2.30s elapsed
