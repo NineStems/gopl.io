@@ -28,7 +28,7 @@ func main() {
 		}
 		fmt.Fprintf(os.Stderr, "status code: %v\n", resp.Status)
 
-		_, err = io.Copy(os.Stderr, resp.Body)
+		_ , err = io.Copy(os.Stderr, resp.Body)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "copy: reading %s: %v\n", url, err)
 			os.Exit(1)
