@@ -25,3 +25,5 @@ in stages in the book.
 - [x] ch1 ex 7-9
 - [x] ch1 ex 10-11
 - [x] ch1 ex 12
+- [ ] ch2 ex 1
+- [ ] ch2 ex 2
