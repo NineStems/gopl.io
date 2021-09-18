@@ -21,12 +21,29 @@ in stages in the book.
 
 - [x] ch1 ex 1-3
 - [x] ch1 ex 4
-- [x] ch1 ex 5-6
-- [x] ch1 ex 7-9
-- [x] ch1 ex 10-11
+- [x] ch1 ex 5
+- [x] ch1 ex 6
+- [x] ch1 ex 7
+- [x] ch1 ex 8
+- [x] ch1 ex 9
+- [x] ch1 ex 10
+- [x] ch1 ex 11
 - [x] ch1 ex 12
 - [x] ch2 ex 1
 - [x] ch2 ex 2
 - [x] ch2 ex 3
 - [x] ch2 ex 4
 - [x] ch2 ex 5
+- [x] ch3 ex 1 (left some question)
+- [ ] ch3 ex 2
+- [ ] ch3 ex 3
+- [ ] ch3 ex 4
+- [ ] ch3 ex 5
+- [ ] ch3 ex 6
+- [ ] ch3 ex 7
+- [ ] ch3 ex 8
+- [ ] ch3 ex 9
+- [ ] ch3 ex 10
+- [ ] ch3 ex 11
+- [ ] ch3 ex 12
+- [ ] ch3 ex 13

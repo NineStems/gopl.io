@@ -13,12 +13,13 @@ import (
 )
 
 const (
-	width, height = 600, 320            // canvas size in pixels
-	cells         = 100                 // number of grid cells
-	xyrange       = 30.0                // axis ranges (-xyrange..+xyrange)
-	xyscale       = width / 2 / xyrange // pixels per x or y unit
-	zscale        = height * 0.4        // pixels per z unit
-	angle         = math.Pi / 6         // angle of x, y axes (=30°)
+	width, height = 600, 320                                       // canvas size in pixels
+	cells         = 100                                            // number of grid cells
+	xyrange       = 30.0                                           // axis ranges (-xyrange..+xyrange)
+	xyscale       = width / 2 / xyrange                            // pixels per x or y unit
+	zscale        = height * 0.4                                   // pixels per z unit
+	angle         = math.Pi / 6                                    // angle of x, y axes (=30°)
+	MaxFloat64    = 1.797693134862315708145274237317043567981e+308 // 2**1023 * (2**53 - 1) / 2**52
 )
 
 var sin30, cos30 = math.Sin(angle), math.Cos(angle) // sin(30°), cos(30°)
@@ -47,6 +48,9 @@ func corner(i, j int) (float64, float64) {
 
 	// Compute surface height z.
 	z := f(x, y)
+	if z == MaxFloat64{ //ch 3 ex 1 but i dont think that is right answer
+		return 0,0
+	}
 
 	// Project (x,y,z) isometrically onto 2-D SVG canvas (sx,sy).
 	sx := width/2 + (x-y)*cos30*xyscale
