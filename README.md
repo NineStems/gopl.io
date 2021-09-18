@@ -35,7 +35,7 @@ in stages in the book.
 - [x] ch2 ex 4
 - [x] ch2 ex 5
 - [x] ch3 ex 1 (left some question)
-- [ ] ch3 ex 2
+- [x] ch3 ex 2
 - [ ] ch3 ex 3
 - [ ] ch3 ex 4
 - [ ] ch3 ex 5

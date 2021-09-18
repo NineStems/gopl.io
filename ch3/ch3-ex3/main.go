@@ -9,6 +9,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math"
 )
 
@@ -20,9 +21,9 @@ const (
 	zscale        = height * 0.4                                   // pixels per z unit
 	angle         = math.Pi / 6                                    // angle of x, y axes (=30°)
 	MaxFloat64    = 1.797693134862315708145274237317043567981e+308 // 2**1023 * (2**53 - 1) / 2**52
-	colorRed = "#ff0000"
-	colorBlue = "#0000ff"
-	colorBlack = "#ffffff"
+	colorRed      = "#ff0000"
+	colorBlue     = "#0000ff"
+	colorBlack    = "#ffffff"
 )
 
 var sin30, cos30 = math.Sin(angle), math.Cos(angle) // sin(30°), cos(30°)
@@ -34,13 +35,24 @@ func main() {
 	var color string
 	for i := 0; i < cells; i++ {
 		for j := 0; j < cells; j++ {
+
 			ax, ay := corner(i+1, j)
 			bx, by := corner(i, j)
 			cx, cy := corner(i, j+1)
 			dx, dy := corner(i+1, j+1)
+
 			color = colorBlue
+
+			if i == 1 || i ==0 {
+				log.Printf("i = %v <polygon fill='%v' points='%g,%g %g,%g %g,%g %g,%g'/>\n",
+					i,color, ax, ay, bx, by, cx, cy, dx, dy)
+			}
+
+			if (cx  > 400 && cx < 150) {
+				color = colorRed
+			}
 			fmt.Printf("<polygon fill='%v' points='%g,%g %g,%g %g,%g %g,%g'/>\n",
-				color,ax, ay, bx, by, cx, cy, dx, dy)
+				color, ax, ay, bx, by, cx, cy, dx, dy)
 		}
 	}
 	fmt.Println("</svg>")
@@ -53,8 +65,8 @@ func corner(i, j int) (float64, float64) {
 
 	// Compute surface height z.
 	z := f(x, y)
-	if z == MaxFloat64{ //ch 3 ex 1 but i dont think that is right answer
-		return 0,0
+	if z == MaxFloat64 { //ch 3 ex 1 but i dont think that is right answer
+		return 0, 0
 	}
 
 	// Project (x,y,z) isometrically onto 2-D SVG canvas (sx,sy).
